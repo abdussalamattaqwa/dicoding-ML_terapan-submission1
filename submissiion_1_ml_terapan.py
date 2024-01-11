@@ -8,52 +8,58 @@ Original file is located at
 
 Nama : Abd Salam At Taqwa
 
-Sumber dataset : https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition
-
 #Laporan Proyek Machine Learning - Abd Salam At Taqwa
 
 ##Domain Proyek
 
 ###Latar Belakang
 
-Pola makan dalam kehidupan seseorang harus lebih diperhatikan karena pola makan yang tidak sehat dapat menyebabkan berbagai macam penyakit, salah satunya adalah obesitas. Obesitas merupakan suatu kondisi dimana lemak menumpuk atau berlebihan sehingga dapat berdampak buruk bagi kesehatan. Kegagalan untuk segera mengatasi obesitas dapat meningkatkan risiko penyakit jantung, tekanan darah tinggi, dan diabetes.
+Kebiasaan makan dalam kehidupan seseorang harus lebih diperhatikan karena pola makan yang tidak sehat dapat menyebabkan berbagai macam penyakit, salah satunya adalah obesitas. Obesitas merupakan suatu kondisi dimana lemak menumpuk atau berlebihan sehingga dapat berdampak buruk bagi kesehatan. Kegagalan untuk segera mengatasi obesitas dapat meningkatkan risiko penyakit jantung, tekanan darah tinggi, dan diabetes. Obesitas menyebabkan berbagai masalah di berbagai bidang (kesehatan, demografi, tenaga kerja, keluarga, dan ekonomi) [(Gozukara et al, 2023)](https://www.mdpi.com/2075-4418/13/18/2949)
 
-Suatu cara untuk mengatasi obesitas adalah menjaga dan memonitor pola makan dan aktifitas kondisi fisik dalam kehidupan sehari-hari. Ada beberapa faktor yang mempengaruhi pola makan seseorang, diantaranya adalah Frekuensi konsumsi makanan berkalori tinggi (FAVC), Frekuensi konsumsi sayuran (FCVC), Jumlah makanan utama (NCP), Konsumsi makanan di antara waktu makan (CAEC), Konsumsi air setiap hari (CH20), dan Konsumsi alkohol (CALC).
+Untuk mengatasi masalah penyakit obesitas ini, lembaga dan perusahaan swasta, serta organisasi internasional mendorong untuk pencegahan dan pengobatan yang berfokus pada aktivitas fisik dan kebiasaan gizi [(Navidad et al, 2021)](https://www.mdpi.com/1660-4601/18/19/10187), karena keduanya merupakan dua faktor risiko utama dalam mencegah penyakit obesitas. Pada penelitian [(Palechor et al, 2019)](https://www.sciencedirect.com/science/article/pii/S2352340919306985?via%3Dihub) telah mengumpulkan dataset berdasarkan kebiasan makan dan kondisi fisik untuk setiap tingkat obesitas berdasarkan standar WHO.
+Masing-masing data yang didapatkan dihitung tingkat BMInya, kemudian kriteria WHO diterapkan untuk mengklasifikasikan tingkat obesitas sebagai berikut: berat badan kurang = BMI kurang dari 18,5; normal = BMI antara 18,5 dan 24,9; kelebihan berat badan = BMI antara 25,0 dan 29,9; obesitas I = BMI antara 30,0 dan 34,9; obesitas II = BMI antara 35,0 dan 39,9; dan obesitas III = BMI lebih tinggi dari 40. Kriteria WHO didasarkan pada hubungan antara BMI dan risiko penyakit kronis dan kematian.
 
-Selain dari pola makan faktor-faktor yang terkait pada kondisi fisik adalah: Pemantauan konsumsi kalori (SCC), Frekuensi aktivitas fisik (FAF), Waktu penggunaan menggunakan perangkat teknologi (TUE), Transportasi yang digunakan (MTRANS), variabel lain yang diperoleh adalah: Jenis Kelamin, Usia, Tinggi dan Berat Badan.
+Fitur yang digunakan untuk kebiasaan makan pada dataset tersebut adalah Frekuensi konsumsi makanan berkalori tinggi (FAVC), Frekuensi konsumsi sayuran (FCVC), Jumlah makanan utama (NCP), Konsumsi makanan di antara waktu makan (CAEC), Konsumsi air setiap hari (CH20), dan Konsumsi alkohol (CALC). Selain dari pola makan fitur terkait pada kondisi fisik uang juga digunakan pada dataset adalah: Pemantauan konsumsi kalori (SCC), Frekuensi aktivitas fisik (FAF), Waktu penggunaan menggunakan perangkat teknologi (TUE), Transportasi yang digunakan (MTRANS), variabel lain yang diperoleh adalah: Jenis Kelamin, Usia, Tinggi dan Berat Badan.
 
-Faktor-faktor pola makan dan kondisi fisik tersebut perlu di perhatikan lebih baik untuk mencegah obesitas. Apabila faktor tersebut tidak diperhatikan dapat dengan mudah mengalami obesitas tanpa disadari. Oleh karena itu perlunya sebuah model yang dapat memprediksi obesitas seseorang berdasarkan faktor-faktor atau atribut tersebut. Hal ini dapat memudahkan manusia untuk memonitoring dan mencegah atau memperbaiki lebih awal ketika pola makan dan kondisi fisik tidak baik.
+Pada proyek ini dibangun sebuah model pembelajaran untuk memprediksi tingkat obesitas seseorang berdasarkan kebiasan makan dan kondisi fisik seseorang. Hal ini dapat memudahkan manusia untuk memonitoring tingkat obesitas seseorang sehingga mendapatkan tingkat obesitas yang normal dan membantu untuk mencegah obesitas meningkat.
 
 ##Business Understanding
 
-Proyek ini dibangun untuk mengatur pola makan dan kondisi fisik seseorang untuk mencegah obesitas. Data dari pola makan dan kondisi fisik dapat digunakan untuk memprediksi tingkatan dari obesitas seseorang. Hasil dari prediksi obesitas dapat dijadikan sebagai acuan untuk mengatur atau memperbaiki pola makan dan kondisi fisik sebelum penyakit obesitas bertambah parah.
+
+Proyek ini dibangun untuk mengatur kebiasaan makan dan kondisi fisik seseorang untuk mendapatkan tingkat obesitas yang ideal. Data dari kebiasaan makan dan kondisi fisik dapat digunakan untuk memprediksi tingkatan dari obesitas seseorang. Hasil dari prediksi tingkatan obesitas dapat dijadikan sebagai acuan untuk mengatur atau memperbaiki kebiasaa makan dan kondisi fisik sebelum penyakit obesitas bertambah parah.
 
 ##Problem Statements
 
-Menjelaskan pernyataan masalah latar belakang:
-
-* Faktor atau fitur apa yang paling mempengaruhi obesitas seseorang?
-* Bagaimana karakteristik obesitas seseorang dengan pola makan dan kondisi fisik tertentu?
+Berdasarkan latar belakang diatas, masalah yang dapat diangkat adalah:
+* Bagaimana memprediksi tingkat obesitas seseorang berdasarkan kebiasaan makan dan kondisi fisik seseorang?
+* Bagaimana memilih model terbaik untuk memprediksi tingkat obesitas seseorang?
 
 ##Goals
-* Mengetahui faktor yang paling berpengaruh terhadap obesitas seseorang
-* Membangun sebuah model yang dapat memprediksi tingkat obesitas seseorang berdasarkan riwayat pola makan dan kondisi fisik seseorang
+* Membangun sebuah model yang dapat memprediksi tingkat obesitas seseorang berdasarkan kebiasaan makan dan kondisi fisik seseorang
+* Memilih model terbaik berdasarkan tingkat kesalahan dari MSE yang terkecil
 
 ## Solution statements
-
-* Melakukan Exploratory Data Analysis terhadap semua faktor atau variabel untuk menemumak varibel yang paling berpengaruh terhadap penentuan tingkat obesitas seseorang
-* Membangun 3 model machine learning sederhana dan memilih yang terbaik untuk memprediksi obesitas berdasarkan riwayat pola makan dan kondisi fisik
+* Membangun 3 model machine learning sederhana untuk memprediksi tingkat obesitas seseorang
+* Memilih model machine learning yang terbaik berdasarkan tingkat kesalahan terkecil dari MSE
 
 ##Data Understanding & Removing Outlier
 
-Dataset yang digunakan dalam proyek ini merupakan data pola makanan dan kondisi fisik yang memiliki kriteria tingkat obesitasnya masing-masing. Dataset ini sudah tersedia dan dapat diunduh pada [UCI Machine learning](https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition).
+Dataset yang digunakan dalam proyek ini merupakan data kebiasaan makan dan kondisi fisik yang memiliki kriteria tingkat obesitasnya masing-masing. Dataset ini sudah tersedia dan dapat diunduh pada [UCI Machine learning](https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition).
+
+*Menginstall package ucimlrepo*
 """
 
-# menginstall package ucimlrepo
 !pip install ucimlrepo
 
-# Mengimport librari yang ucimlrepo yang telah diinstall sebelumnya
+"""*Mengimport librari yang ucimlrepo yang telah diinstall sebelumnya*
+
+
+
+"""
+
 from ucimlrepo import fetch_ucirepo
+
+"""*Mengambil data dari repositori UCI Machine Learning menggunakan id dataset*"""
 
 support2 = fetch_ucirepo(id=544)
 # data (as pandas dataframes)
@@ -63,7 +69,8 @@ y = support2.data.targets
 # metadata
 print(support2.metadata)
 
-# variable information
+"""*Mencetak informasi variabel*"""
+
 print(support2.variables)
 
 """Berikut informasi pada dataset :
@@ -74,7 +81,6 @@ print(support2.variables)
 * Tidak ada missing value dalam dataset.
 
 ##Variable - variable pada dataset
-
 * Gender : Jenis kelamin
 * Age : Umur  
 * Height : Tinggi badan
@@ -94,51 +100,97 @@ print(support2.variables)
 * NObeyesdad  : Label tingkat obesitas
 
 ## Exploratory Data Analysis
-
 ### Assessing Data
+
+*Mengimport librari yang dibutuhkan*
 """
 
-# Mengimport librari yang dibutuhkan
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
 
-# Melihat informasi dataset
+"""*Melihat informasi dataset*"""
+
 X.info()
 
-# Berdasarkan hasil diatas perlunya mengubah tipe data objek pada fitur-fitur tersebut menjadi tipe data kategori
+"""*Melihat jumlah nilai null pada masing-masing kolom*"""
 
-# Melihat jumlah nilai null pada masing-masing kolom
 X.isna().sum()
 
-# Melihat deskripsi data untuk menganalisis penyebaran data masing-masing fitur dengan tipe data integeruntuk melihat apakah ada anomali data
-# Berdasarkan hasil didapatkan bahwa tidak terdapat data anomali atau data tidak jelas pada dataset
+"""*Melihat deskripsi data untuk menganalisis penyebaran data masing-masing fitur dengan tipe data integeruntuk melihat apakah ada anomali data. Berdasarkan hasil didapatkan bahwa tidak terdapat data anomali atau data tidak jelas pada dataset.*"""
+
 X.describe()
 
-# Visualisasi jenis kelamin yang dominan pada data untuk melihat ukuran data berdasarkan gender
-plt.figure(figsize=(10,6))
-sns.countplot(
-    y="Gender",
-    # order=X["Gender"].value_counts().index,
-    data=X)
+"""### Univariate Analysis
 
-plt.title('Ukuran Data Berdasarkan Gender')
-plt.xlabel('Gender')
-plt.ylabel('Jumlah Data')
+*Visualisasi distribusi data berdasarkan fitur gender*
+"""
+
+feature = 'Gender'
+count = X[feature].value_counts()
+percent = 100*X[feature].value_counts(normalize=True)
+df = pd.DataFrame({'jumlah sampel':count, 'persentase':percent.round(1)})
+print(df)
+count.plot(kind='bar', title=feature);
+
+"""*Berdasarkan hasil visualisasi diatas dapat dilihat bahwa data termasuk seimbang karena data laki-laki dan perempuan memiliki ukuran yang hampir sama atau seimbang. Hal ini menandakan ukuran dataset yang digunakan baik digunakan untuk proses pelatihan model. Data yang tidak seimbang dapat membuat Sebagian besar algoritma pembelajaran mesin tidak bekerja dengan baik*
+
+*Visualisasi distribusi data berdasarkan fitur tingkatan obesitas*
+"""
+
+feature = 'NObeyesdad'
+count = y[feature].value_counts()
+percent = 100*y[feature].value_counts(normalize=True)
+df = pd.DataFrame({'jumlah sampel':count, 'persentase':percent.round(1)})
+print(df)
+count.plot(kind='bar', title=feature);
+
+"""*Berdasarkan hasil visualisasi diatas dapat dilihat bahwa data jenis-jenis tingkatan obesitas seimbang sehingga bisa digunakan untuk model*
+
+*Visualisasi distribusi data berdasarkan fitur height, age*
+"""
+
+X.hist(bins=50, figsize=(15,5), column=['Height', 'Age'])
+plt.ticklabel_format(useOffset=False, style='plain')
 plt.show()
 
-"""Berdasarkan hasil visualisasi diatas dapat dilihat bahwa data termasuk seimbang karena data laki-laki dan perempuan memiliki ukuran yang hampir sama
+"""Visualisasi distribusi ukuran data diatas bertujuan untuk melihat distribusi data yang akan digunakan. Dalam Machine Learning, data yang memenuhi Distribusi Normal bermanfaat untuk pembuatan model. Hal ini membuat matematika lebih mudah ketika melakukan proses pembelajaran. Berdasarkan hasil diatas dapat diketahui bahwa fitur height memiliki distribusi normal sedangkan fitur age cenderung condong kekanan. Sebagian besar data *age* yang diambil adalah antara 19 hingga 25 tahun.
+
+### Multivariate Analysis
+
+*Visualisasi persebaran data dari fitur Weight, Height, dan Gender.*
+"""
+
+sns.lmplot(
+    data=X,
+    x="Weight",
+    y="Height",
+    height=5,
+    aspect=2,
+    hue="Gender",
+    palette={"Female": "#c90076", "Male": "#2986cc"},
+    scatter_kws={"s": 8},
+    line_kws={"linewidth": 1},
+)
+plt.title("Height and Weight VS Gender", fontsize=14, color="#0a2e4f")
+plt.show()
+
+"""Berdasarkan visualisasi diatas dapat dilihat pada umumnya bahwa pria memiliki fitur *height* yang lebih tinggi dibandingkan wanita. Sedangkan wanita mendominasi untuk berat badan (*weight*) diatas 130.
 
 ## Data Preparation
+
+*Mengimport librari scikit learn untuk mengguncakan package LabelEncoder*
 """
 
 from sklearn.preprocessing import LabelEncoder
 
+"""*Mendapatkan kolom-kolom dengan tipedata selain integer yang selanjutnya akan di encode menjadi angka*"""
+
 to_cat = X.loc[:, X.nunique() < 8].columns
 to_cat
 
-# Mengkonfersi data-data objek yang bersifat kategorikal menjadi numeric yang dapat dengan mudah dipahami model
+"""*Mengkonfersi data-data objek yang bersifat kategorikal menjadi numeric yang dapat dengan mudah dipahami model*"""
 
 encoder = LabelEncoder()
 
@@ -147,24 +199,33 @@ columns_to_encode = X.loc[:, X.nunique() < 8].columns
 for column in columns_to_encode:
     X[column] = encoder.fit_transform(X[column])
 
+"""*Melihat hasil dari label encoder, dapat dilihat bahwa semua fitur sudah berbentuk angka dan bisa dimasukkan kedalammodel*"""
+
 X.head()
 
-y.head()
+"""Label encoder untuk target yang akan dirediksi"""
 
 y['NObeyesdad'] = encoder.fit_transform(y['NObeyesdad'])
-
 y.head()
 
-"""## Memisahkan data latih dan data uji"""
+"""## Memisahkan data latih dan data uji
+
+*Mengimport librari-librari yang dibutuhkan untuk proses pemisahan data latih dan data uji*
+"""
 
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 
+"""*Memisahkan data latih dan data uji dengan pembagian 80 % data latih dan 20 % data uji. Proses pemisahan ini dilakukan untuk menghindari terjadinya overfitting, yaitu suatu kondisi pelatihan yang hasil uji terhadap data yang dilatih sangat bagus tetapi diuji oleh data lain yang tidak digunakan dalam pelatihan sangat buruk. Overfitting terjadi karena kegagalan model dalam proses generalisasi data.*"""
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-"""## Modeling"""
+"""## Modeling
 
-# Menggunakan algoritma grid search untuk hyperparameter tunning
+Karena label yang akan diprediksi berupa numerik, maka algoritma yang digunakan adalah algoritma regresi. Regresi adalah metode pada supervised learning yang mengembalikan target numerik untuk setiap sampel. Adapun algoritma sederhana sebagai tahapan awal yang digunakan adalah algoritma KNN, Random Forest dan Boosting
+
+*Mengimport librari-librari yang digunakan untuk proses modelling*
+"""
 
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import ShuffleSplit
@@ -175,11 +236,13 @@ from sklearn.ensemble import AdaBoostRegressor
 
 from sklearn.metrics import mean_squared_error
 
+"""*Menggunakan algoritma grid search untuk hyperparameter tunning, berikut model-model dan hyperparameter pada model yang akan di tunning. Grid search adalah suatu cara untuk menemukan parameter terbaik yang digunakan untuk modeling dalam machin learning. Memakai grid search bertujuan untuk mencari hyperparameter terbaik yang hendak digunakan untuk modeling di suatu algoritma machine learning.*"""
+
 algo_params = {
     'knn': {
         'model': KNeighborsRegressor(),
         'params': {
-            'n_neighbors': [5, 7, 9, 11, 13, 15],
+            'n_neighbors': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
         }
     },
     'boosting': {
@@ -201,6 +264,8 @@ algo_params = {
 
 }
 
+"""*Proses pelatihan model menggunakan algoritma grid search untuk menentukan hyperparameter yang terbaik*"""
+
 scores = []
 cv = ShuffleSplit(n_splits=5, test_size=0.05, random_state=123)
 for algo_name, config in algo_params.items():
@@ -214,46 +279,66 @@ for algo_name, config in algo_params.items():
 
 result = pd.DataFrame(scores,columns=['model','best_score','best_params'])
 
+"""*Mencetak hyperparameter terbaik untuk setiap model*"""
+
 result
 
-"""Menjalankan model dengan parameter terbaik"""
+"""*Menjalankan model-model menggunakan hyperparameter terbaik, melist nama-nama model dan nama perhitungan error yang digunakan dalam bentuk dataframe*"""
 
 models = pd.DataFrame(index=['train_mse', 'test_mse'],
                       columns=['KNN', 'RandomForest', 'Boosting'])
+
+"""*Inisialisasi dan menjalankan algoritma KNN dengan hyperparameter terbaik yang didapatkan sebelumnya*"""
 
 knn = KNeighborsRegressor(n_neighbors=5)
 knn.fit(X_train, y_train)
 
 models.loc['train_mse','knn'] = mean_squared_error(y_pred = knn.predict(X_train), y_true=y_train)
 
+"""*Inisialisasi dan menjalankan algoritma Random Forest dengan hyperparameter terbaik yang didapatkan sebelumnya*"""
+
 RF = RandomForestRegressor(n_estimators=25, max_depth=32, random_state=55, n_jobs=-1)
 RF.fit(X_train, y_train.values.ravel())
 
 models.loc['train_mse','RandomForest'] = mean_squared_error(y_pred=RF.predict(X_train), y_true=y_train)
 
+"""*Inisialisasi dan menjalankan algoritma Boosting Forest dengan hyperparameter terbaik yang didapatkan sebelumnya*"""
+
 boosting = AdaBoostRegressor(learning_rate=0.1, random_state=55, n_estimators= 100)
 boosting.fit(X_train, y_train.values.ravel())
 models.loc['train_mse','Boosting'] = mean_squared_error(y_pred=boosting.predict(X_train), y_true=y_train)
 
-"""##Evaluasi Model"""
+"""##Evaluasi Model
+
+Metode Mean Squared Error (MSE) digunakan pada proyek ini untuk menentukan algoritma model machine learning yang terbaik. Secara umum MSE digunakan untuk mengecek estimasi berapa nilai kesalahan pada hasil prediksi. Nilai MSE yang rendah atau nilai MSE mendekati nol menunjukkan bahwa hasil prediksi sesuai dengan data aktual dan bisa dijadikan untuk perhitungan prediksi di periode mendatang. Metode MSE digunakan untuk mengevaluasi metode pengukuran dengan model regresi.
+
+*Buat variabel mse yang isinya adalah dataframe nilai mse data train dan test pada masing-masing algoritma*
+"""
 
 # Buat variabel mse yang isinya adalah dataframe nilai mse data train dan test pada masing-masing algoritma
 mse = pd.DataFrame(columns=['train', 'test'], index=['KNN','RF','Boosting'])
 
-# Buat dictionary untuk setiap algoritma yang digunakan
+"""*Buat dictionary untuk setiap algoritma yang digunakan*"""
+
 model_dict = {'KNN': knn, 'RF': RF, 'Boosting': boosting}
 
-# Hitung Mean Squared Error masing-masing algoritma pada data train dan test
+"""*Hitung Mean Squared Error masing-masing algoritma pada data train dan test*"""
+
 for name, model in model_dict.items():
     mse.loc[name, 'train'] = mean_squared_error(y_true=y_train, y_pred=model.predict(X_train))/1e3
     mse.loc[name, 'test'] = mean_squared_error(y_true=y_test, y_pred=model.predict(X_test))/1e3
 
-# Panggil mse
+"""*Mencetak nilai-nilai mse yang didapatan pada setiap model*"""
+
 mse
+
+"""*Visualisasi dengan box plot untuk mempermudah membandingkan masing-masing kesalahan pada model. Berdasarkan hasil visualisasi didapatkan bahwa algoritma Random Forest memliki kesalahan yang palingkecil dibandingkan lagoritma lainnya.*"""
 
 fig, ax = plt.subplots()
 mse.sort_values(by='test', ascending=False).plot(kind='barh', ax=ax, zorder=3)
 ax.grid(zorder=0)
+
+"""*Membuat prediksi menggunakan beberapa data test pada masing-masing model. Terlihat bahwa prediksi dengan Random Forest (RF) memberikan hasil yang paling mendekati dibandingkan dengan model-model lainnya*"""
 
 prediksi = X_test.iloc[5:10].copy()
 pred_dict = {'y_true':y_test[5:10].values.ravel()}
@@ -264,3 +349,12 @@ for name, model in model_dict.items():
 
 pred_dict['prediksi_KNN'] = pred_dict['prediksi_KNN'].flatten()
 pd.DataFrame(pred_dict)
+
+"""# Daftar Pustaka
+Gozukara Bag, H. G., Yagin, F. H., Gormez, Y., González, P. P., Colak, C., Gülü, M., ... & Ardigò, L. P. (2023). Estimation of obesity levels through the proposed predictive approach based on physical activity and nutritional habits. Diagnostics, 13(18), 2949.
+
+Navidad, L., Padial-Ruz, R., & González, M. C. (2021). Nutrition, Physical activity, and new technology programs on obesity prevention in primary education: a systematic review. International Journal of Environmental Research and Public Health, 18(19), 10187.
+
+Palechor, F. M., & de la Hoz Manotas, A. (2019). Dataset for estimation of obesity levels based on eating habits and physical condition in individuals from Colombia, Peru and Mexico. Data in brief, 25, 104344.
+
+"""

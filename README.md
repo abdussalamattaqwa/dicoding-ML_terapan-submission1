@@ -43,10 +43,10 @@ Berikut informasi pada dataset :
 * Tidak ada *missing value* dalam dataset.
 
 ## Variabel- variabel pada dataset
-* Gender : Jenis kelamin
-* Age : Umur  
-* Height : Tinggi badan
-* Weight : Berat badan
+* *Gender* : Jenis kelamin
+* *Age* : Umur  
+* *Height* : Tinggi badan
+* *Weight* : Berat badan
 * family_history_with_overweight : riwayat keluarga dengan kelebihan berat badan
 * FAVC : Sering konsumsi makanan berkalori tinggi
 * FCVC : Frekuensi konsumsi sayuran
@@ -63,8 +63,8 @@ Berikut informasi pada dataset :
 
 ## *Exploratory Data Analysis*
 ### *Assessing Data*
-Sebelum melakukan *exploratory* pertama-tama dilakukan penilaian terhadap informasi dataset yang dapat dilihat pada Tabel 1
-Tabel 1. Informasi dataset
+Sebelum melakukan *exploratory* pertama-tama dilakukan penilaian terhadap informasi dataset yang dapat dilihat pada Tabel 1.
+<br> Tabel 1. Informasi dataset
 | No |  Column                         | Non-Null Count | Dtype | 
 | --- | ------                        | -------------- | -----  |
 | 1 |  Gender                         | 2111 non-null  | object |
@@ -84,11 +84,8 @@ Tabel 1. Informasi dataset
 | 15 | CALC                           | 2111 non-null  | object |
 | 16 | MTRANS                         | 2111 non-null  | object|
 
-<br> Tabel 1 diatas menunjukkan kolom atau fitur-fitur pada dataset yang akan digunakan beserta informasi jumlah data dan tipe data masing-masing fitur.
-Dapat dilihat fitur-fitur yang terdapat pada dataset dan tipe data yang terbaca.
-
-<br> Langkah selanjutnya adalah melihat jumlah nilai *null* pada masing-masing kolom. Tujuan untuk pengecekan ini adalah untuk melakukan penanganan jika terdapat nilai *null* atau data yang hilang pada dataset. Penyebab data yang hilang dapat berupa kerusakan data atau kegagalan pencatatan data. Penanganan data yang hilang sangat penting selama prapemrosesan kumpulan data karena banyak algoritma *machine learning* tidak mendukung nilai yang hilang. Hasil dari perhitungan nilai *null* pada setiap kolom dapat dilihat pada Tabel 2 berikut<br> 
-Tabel 2. Jumlah nilai *null* masing-masing kolom
+Tabel 1 diatas menunjukkan kolom atau fitur-fitur pada dataset yang akan digunakan beserta informasi jumlah data yaitu 2111 dan tipe data masing-masing fitur yang akan digunakan pada model. Langkah selanjutnya adalah melihat jumlah nilai *null* pada masing-masing kolom. Tujuan untuk pengecekan ini adalah untuk melakukan penanganan jika terdapat nilai *null* atau data yang hilang pada dataset. Penyebab data yang hilang dapat berupa kerusakan data atau kegagalan pencatatan data. Penanganan data yang hilang sangat penting selama prapemrosesan kumpulan data karena banyak algoritma *machine learning* tidak mendukung nilai yang hilang. Hasil dari perhitungan nilai *null* pada setiap kolom dapat dilihat pada Tabel 2 berikut.
+<br> Tabel 2. Jumlah nilai *null* masing-masing kolom
 |Column                           | Total |
 | ----                             |---|
 |Gender                           | 0 |
@@ -108,9 +105,8 @@ Tabel 2. Jumlah nilai *null* masing-masing kolom
 |CALC                             | 0 |
 |MTRANS                           | 0 |
 
-<br> Berdasarkan hasil diatas dapat dilihat bahwa tidak terdapat nilai *null* pada dataset. Sehingga tidak perlu dilakukan penanganan untuk nilai *null* atau data yang hilang.<br> 
-Langkah selanjutnya adalah melihat deskripsi data untuk kolom-kolom dengan tipe data numerik yang dapat dilihat pada Tabel 3 berikut
-Tabel 3. Deskripsi Data
+Berdasarkan hasil diatas dapat dilihat bahwa tidak terdapat nilai *null* pada dataset. Sehingga tidak perlu dilakukan penanganan untuk nilai *null* atau data yang hilang. Langkah selanjutnya adalah melihat deskripsi data untuk kolom-kolom dengan tipe data numerik yang dapat dilihat pada Tabel 3 berikut .
+<br> Tabel 3. Deskripsi Data
 |index|Gender|Age|Height|Weight|family\_history\_with\_overweight|FAVC|FCVC|NCP|CAEC|SMOKE|CH2O|SCC|FAF|TUE|CALC|MTRANS|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |count|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|
@@ -122,22 +118,22 @@ Tabel 3. Deskripsi Data
 |75%|1\.0|26\.0|1\.768464|107\.430682|1\.0|1\.0|3\.0|3\.0|2\.0|0\.0|2\.47742|0\.0|1\.6666775|1\.0|3\.0|3\.0|
 |max|1\.0|61\.0|1\.98|173\.0|1\.0|1\.0|3\.0|4\.0|3\.0|1\.0|3\.0|1\.0|3\.0|2\.0|3\.0|4\.0|
 
-<br> Tabel 3 diatas adalah untuk menganalisis penyebaran data masing-masing fitur dengan tipe data *integer* untuk melihat apakah ada data anomali. Berdasarkan hasil diatas didapatkan bahwa tidak terdapat data anomali atau data tidak jelas pada dataset, sehingga tidak perlu dilakukan penanganan data anomali atau menghapus outlier pada dataset.<br> 
+Tabel 3 diatas adalah untuk menganalisis penyebaran data masing-masing fitur dengan tipe data *integer* untuk melihat apakah ada data anomali. Berdasarkan hasil diatas didapatkan bahwa tidak terdapat data anomali atau data tidak jelas pada dataset, sehingga tidak perlu dilakukan penanganan data anomali atau menghapus outlier pada dataset.<br> 
 
 ### *Univariate Analysis*
-Persentasi dan visualisasi distribusi *gender* yang dominan pada data untuk melihat ukuran data berdasarkan *gender*<br> 
-Tabel 4. Persentasi distribusi *gender*
+Persentasi dan visualisasi distribusi *gender* yang dominan pada data untuk melihat ukuran data berdasarkan *gender* .
+<br>Tabel 4. Persentasi distribusi *gender*
 |index|jumlah sampel|persentase|
 |---|---|---|
 |Male|1068|50\.6|
 |Female|1043|49\.4|
 
 ![image](https://github.com/abdussalamattaqwa/dicoding-ML_terapan-submission1/assets/67810655/1e0cedde-d7d1-44bd-8c81-dc6b18f9bc78) 
-Gambar 1. Visualisasi distribusi *gender*
-<br> Berdasarkan hasil persenrtasi dan visualisasi diatas dapat dilihat bahwa data termasuk seimbang karena data dengan *gender* *male* dan *female* memiliki ukuran yang hampir sama atau seimbang. Hal ini menandakan ukuran dataset yang digunakan baik digunakan untuk proses pelatihan model. Data yang tidak seimbang dapat membuat Sebagian besar algoritma *machine learning* tidak bekerja dengan baik <br> 
+<br>Gambar 1. Visualisasi distribusi *gender*
+<br>Berdasarkan hasil persenrtasi dan visualisasi diatas dapat dilihat bahwa data termasuk seimbang karena data dengan *gender* *male* dan *female* memiliki ukuran yang hampir sama atau seimbang. Hal ini menandakan ukuran dataset yang digunakan baik digunakan untuk proses pelatihan model. Data yang tidak seimbang dapat membuat Sebagian besar algoritma *machine learning* tidak bekerja dengan baik <br> 
 
 <br> Persentasi dan visualisasi distribusi data berdasarkan fitur tingkatan obesitas
-Tabel 5. Persentasi distribusi tingkat obesitas
+<br> Tabel 5. Persentasi distribusi tingkat obesitas
 |index|jumlah sampel|persentase|
 |---|---|---|
 |Obesity\_Type\_I|351|16\.6|
@@ -149,12 +145,12 @@ Tabel 5. Persentasi distribusi tingkat obesitas
 |Insufficient\_Weight|272|12\.9|
 
 ![image](https://github.com/abdussalamattaqwa/dicoding-ML_terapan-submission1/assets/67810655/d187058a-ac41-439b-ba04-9dfde7e1f7b8)
-Gambar 2. Visualisasi distribusi tingkat obesitas
+<br>Gambar 2. Visualisasi distribusi tingkat obesitas
 <br> Berdasarkan hasil persentasi dan visualisasi diatas dapat dilihat bahwa data dengan jenis tingkatan obesitas yang berbeda-beda seimbang sehingga cukup bagus digunakan untuk model untuk proses pembelajaran.
 
 <br> Visualisasi distribusi data berdasarkan fitur *height*, dan *age* dapat dilihat pada Gambar 3.
 ![image](https://github.com/abdussalamattaqwa/dicoding-ML_terapan-submission1/assets/67810655/18d84ce2-0658-499e-9459-92d2b34b78c5)
-Gambar 3. Visualisasi distribusi data berdasarkan fitur *height*, dan *age*
+<br>Gambar 3. Visualisasi distribusi data berdasarkan fitur *height*, dan *age*
 <br> Visualisasi distribusi ukuran data diatas bertujuan untuk melihat distribusi data yang akan digunakan. Dalam *machine learning*, data yang memenuhi distribusi normal bermanfaat untuk pembuatan model. Hal ini membuat matematika lebih mudah ketika melakukan proses pembelajaran. Berdasarkan hasil diatas dapat diketahui bahwa fitur *height* memiliki distribusi normal sedangkan fitur *age* cenderung condong kekanan. Sebagian besar fitur *age* yang diambil adalah antara 19 hingga 25 tahun.
 
 ### *Multivariate Analysis*
@@ -166,7 +162,7 @@ Visualisasi persebaran data dari fitur *weight, height, dan gender*. <br>
 ## *Data Preparation*
 ### *Label Encoding*
 Untuk mengonversi label kata menjadi angka, kita perlu menggunakan pembuat label *encoding*. label *encoding* mengacu pada proses transformasi label kata menjadi bentuk numerik. Mengkonfersi data-data objek yang bersifat kategorikal menjadi numerik bertujuan agar dengan mudah dipahami model. Berikut keseluruhan fitur dapat dilihat pada Tabel 6 yang telah dilakukan label *encoding*, dapat dilihat bahwa semua nilai pada fitur sudah dalam bentuk angka dan bisa dimasukkan kedalam model *machine learning*.
-Tabel 6. Hasil label *encoding* pada semua fitur dataset
+<br> Tabel 6. Hasil label *encoding* pada semua fitur dataset
 |index|Gender|Age|Height|Weight|family\_history\_with\_overweight|FAVC|FCVC|NCP|CAEC|SMOKE|CH2O|SCC|FAF|TUE|CALC|MTRANS|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |0|0|21\.0|1\.62|64\.0|1|0|2\.0|3\.0|2|0|2\.0|0|0\.0|1\.0|3|3|
@@ -176,7 +172,7 @@ Tabel 6. Hasil label *encoding* pada semua fitur dataset
 |4|1|22\.0|1\.78|89\.8|0|0|2\.0|1\.0|2|0|2\.0|0|0\.0|0\.0|2|3|
 
 <br> Selain fitur yang dilakukan encoder kedalam bentuk angka, data target juga perlu dilakukan label *encoding* untuk dimasukkan kedalam model. Berikut hasil label *encoding* pada data target:
-Tabel 7. Hasil label *encoding* pada label datau data taerget
+<br> Tabel 7. Hasil label *encoding* pada label datau data taerget
 |index|NObeyesdad|
 |---|---|
 |0|1|
@@ -204,7 +200,7 @@ Pada proyek ini karena label yang akan diprediksi berupa numerik, maka algoritma
 
 * *GRID Search*
 Menggunakan algoritma *GRID search* untuk *hyperparameter tunning*, *GRID search* adalah suatu cara untuk menemukan parameter terbaik yang digunakan untuk modeling dalam *machine learning*. Adapun hasil dari hyperparameter tunning setiap model menggunakan *GRID search* adalah pada Tabel 8 sebagai berikut:
-Tabel 8. Hasil hyperparameter tunning menggunakan *GRID search*
+<br> Tabel 8. Hasil hyperparameter tunning menggunakan *GRID search*
 |index|model|best\_score|best\_params|
 |---|---|---|---|
 |0|knn|0\.8226496475499843|\{'n\_neighbors': 5\}|
@@ -215,21 +211,21 @@ Tabel 8. Hasil hyperparameter tunning menggunakan *GRID search*
 ## Evaluation
 *Metode Mean Squared Error (MSE)* digunakan pada proyek ini untuk menentukan algoritma model *machine learning* yang terbaik. Secara umum MSE digunakan untuk mengecek estimasi berapa nilai kesalahan pada hasil prediksi. Nilai MSE yang rendah atau nilai MSE mendekati nol menunjukkan bahwa hasil prediksi sesuai dengan data aktual dan bisa dijadikan untuk perhitungan prediksi di periode mendatang. Metode MSE digunakan untuk mengevaluasi metode pengukuran dengan model regresi.<br> 
 ![image](https://github.com/abdussalamattaqwa/dicoding-ML_terapan-submission1/assets/67810655/53af2296-44b8-40f3-91a0-b1b3ce5bfd93)
-Gambar 5. Rumus metode *mean squared error*
+<br> Gambar 5. Rumus metode *mean squared error*
 <br> Berikut hasil evaluasi pada proyek ini dapat dilihat pada tabel 9.
-Tabel 9. Hasil evaluasi MSE pada setiap model
+<br> Tabel 9. Hasil evaluasi MSE pada setiap model
 |index|train|test|
 |---|---|---|
 |KNN|0\.0006203080568720379|0\.001080094562647754|
 |RF|5\.736303317535546e-05|0\.00039486335697399525|
 |Boosting|0\.0015170262746941174|0\.0016553523001821653|
 
-<br> Visualisasi dengan box plot untuk mempermudah membandingkan masing-masing kesalahan pada model. Berdasarkan hasil visualisasi didapatkan bahwa algoritma *Random Forest* memliki kesalahan yang paling kecil dibandingkan algoritma lainnya. Adapun grafik perbandingan error untuk setiap model dapat dilihat sebagai berikut <br> 
+Visualisasi dengan box plot untuk mempermudah membandingkan masing-masing kesalahan pada model. Berdasarkan hasil visualisasi didapatkan bahwa algoritma *Random Forest* memliki kesalahan yang paling kecil dibandingkan algoritma lainnya. Adapun grafik perbandingan error untuk setiap model dapat dilihat sebagai berikut. <br> 
 ![image](https://github.com/abdussalamattaqwa/dicoding-ML_terapan-submission1/assets/67810655/4e19ef12-ba70-41fb-956d-ef6a9b610f40)
-Gambar 6. Grafik MSE setiap model.
+<br> Gambar 6. Grafik MSE setiap model.
 
-<br> Membuat prediksi menggunakan beberapa data test pada masing-masing model. Terlihat bahwa prediksi dengan *Random Forest (RF)* memberikan hasil yang paling mendekati dibandingkan dengan model-model lainnya dapat dilihat pada Tabel 10 berikut.
-Tabel 10. Hasil prediksi dari model menggunakan data tes.
+Membuat prediksi menggunakan beberapa data test pada masing-masing model. Terlihat bahwa prediksi dengan *Random Forest (RF)* memberikan hasil yang paling mendekati dibandingkan dengan model-model lainnya dapat dilihat pada Tabel 10 berikut.
+<br> Tabel 10. Hasil prediksi dari model menggunakan data tes.
 |index|y\_true|prediksi\_KNN|prediksi\_RF|prediksi\_Boosting|
 |---|---|---|---|---|
 |0|0|0\.0|0\.0|0\.3|
@@ -238,6 +234,6 @@ Tabel 10. Hasil prediksi dari model menggunakan data tes.
 |3|2|2\.6|2\.0|4\.0|
 |4|0|0\.0|0\.0|0\.3|
 
-<br> Berdasarkan hasil diatas dapat disimpulkan bahwa model terbaik yang dapat digunakan untuk prediksi tingkat obesitas seseorang adalah menggunakan model *Random Forest* yang memiliki error terkecil dibandingkan model yang lainnya
+Berdasarkan hasil diatas dapat disimpulkan bahwa model terbaik yang dapat digunakan untuk prediksi tingkat obesitas seseorang adalah menggunakan model *Random Forest* yang memiliki error terkecil dibandingkan model yang lainnya
 
 

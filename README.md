@@ -1,47 +1,46 @@
 Nama : Abd Salam At Taqwa
 
-Sumber dataset : https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition
-
-# Laporan Proyek Machine Learning - Abd Salam At Taqwa
+# Laporan Proyek *Machine Learning* - Abd Salam At Taqwa
 
 ## Domain Proyek
 
 ### Latar Belakang
 
-Pola makan dalam kehidupan seseorang harus lebih diperhatikan karena pola makan yang tidak sehat dapat menyebabkan berbagai macam penyakit, salah satunya adalah obesitas. Obesitas merupakan suatu kondisi dimana lemak menumpuk atau berlebihan sehingga dapat berdampak buruk bagi kesehatan. Kegagalan untuk segera mengatasi obesitas dapat meningkatkan risiko penyakit jantung, tekanan darah tinggi, dan diabetes.
+Kebiasaan makan dalam kehidupan seseorang harus lebih diperhatikan karena pola makan yang tidak sehat dapat menyebabkan berbagai macam penyakit, salah satunya adalah obesitas. Obesitas merupakan suatu kondisi dimana lemak menumpuk atau berlebihan sehingga dapat berdampak buruk bagi kesehatan. Kegagalan untuk segera mengatasi obesitas dapat meningkatkan risiko penyakit jantung, tekanan darah tinggi, dan diabetes. Obesitas menyebabkan berbagai masalah di berbagai bidang (kesehatan, demografi, tenaga kerja, keluarga, dan ekonomi) [(Gozukara et al, 2023)](https://www.mdpi.com/2075-4418/13/18/2949)
 
-Suatu cara untuk mengatasi obesitas adalah menjaga dan memonitor pola makan dan aktifitas kondisi fisik dalam kehidupan sehari-hari. Ada beberapa faktor yang mempengaruhi pola makan seseorang, diantaranya adalah Frekuensi konsumsi makanan berkalori tinggi (FAVC), Frekuensi konsumsi sayuran (FCVC), Jumlah makanan utama (NCP), Konsumsi makanan di antara waktu makan (CAEC), Konsumsi air setiap hari (CH20), dan Konsumsi alkohol (CALC).
+Untuk mengatasi masalah penyakit obesitas ini, lembaga dan perusahaan swasta, serta organisasi internasional mendorong untuk pencegahan dan pengobatan yang berfokus pada aktivitas fisik dan kebiasaan gizi [(Navidad et al, 2021)](https://www.mdpi.com/1660-4601/18/19/10187), karena keduanya merupakan dua faktor risiko utama dalam mencegah penyakit obesitas. Pada penelitian [(Palechor et al, 2019)](https://www.sciencedirect.com/science/article/pii/S2352340919306985?via%3Dihub) telah mengumpulkan dataset berdasarkan kebiasan makan dan kondisi fisik untuk setiap tingkat obesitas berdasarkan standar WHO.
+Masing-masing data yang didapatkan dihitung tingkat BMInya, kemudian kriteria WHO diterapkan untuk mengklasifikasikan tingkat obesitas sebagai berikut: berat badan kurang = BMI kurang dari 18,5; normal = BMI antara 18,5 dan 24,9; kelebihan berat badan = BMI antara 25,0 dan 29,9; obesitas I = BMI antara 30,0 dan 34,9; obesitas II = BMI antara 35,0 dan 39,9; dan obesitas III = BMI lebih tinggi dari 40. Kriteria WHO didasarkan pada hubungan antara BMI dan risiko penyakit kronis dan kematian.
 
-Selain dari pola makan faktor-faktor yang terkait pada kondisi fisik adalah: Pemantauan konsumsi kalori (SCC), Frekuensi aktivitas fisik (FAF), Waktu penggunaan menggunakan perangkat teknologi (TUE), Transportasi yang digunakan (MTRANS), variabel lain yang diperoleh adalah: Jenis Kelamin, Usia, Tinggi dan Berat Badan.
+Fitur yang digunakan untuk kebiasaan makan pada dataset tersebut adalah Frekuensi konsumsi makanan berkalori tinggi (FAVC), Frekuensi konsumsi sayuran (FCVC), Jumlah makanan utama (NCP), Konsumsi makanan di antara waktu makan (CAEC), Konsumsi air setiap hari (CH20), dan Konsumsi alkohol (CALC). Selain dari pola makan fitur terkait pada kondisi fisik uang juga digunakan pada dataset adalah: Pemantauan konsumsi kalori (SCC), Frekuensi aktivitas fisik (FAF), Waktu penggunaan menggunakan perangkat teknologi (TUE), Transportasi yang digunakan (MTRANS), variabel lain yang diperoleh adalah: Jenis Kelamin, Usia, Tinggi dan Berat Badan.
 
-Faktor-faktor pola makan dan kondisi fisik tersebut perlu di perhatikan lebih baik untuk mencegah obesitas. Apabila faktor tersebut tidak diperhatikan dapat dengan mudah mengalami obesitas tanpa disadari. Oleh karena itu perlunya sebuah model yang dapat memprediksi obesitas seseorang berdasarkan faktor-faktor atau atribut tersebut. Hal ini dapat memudahkan manusia untuk memonitoring dan mencegah atau memperbaiki lebih awal ketika pola makan dan kondisi fisik tidak baik.
-
-
-## Business Understanding
-Proyek ini dibangun untuk mengatur pola makan dan kondisi fisik seseorang untuk mencegah obesitas. Data dari pola makan dan kondisi fisik dapat digunakan untuk memprediksi tingkatan dari obesitas seseorang. Hasil dari prediksi obesitas dapat dijadikan sebagai acuan untuk mengatur atau memperbaiki pola makan dan kondisi fisik sebelum penyakit obesitas bertambah parah.
+Pada proyek ini dibangun sebuah model pembelajaran untuk memprediksi tingkat obesitas seseorang berdasarkan kebiasan makan dan kondisi fisik seseorang. Hal ini dapat memudahkan manusia untuk memonitoring tingkat obesitas seseorang sehingga mendapatkan tingkat obesitas yang ideal dan membantu untuk mencegah tingkat obesitas meningkat.
 
 
-## Problem Statements
+## *Business Understanding*
+Proyek ini dibangun untuk mengatur kebiasaan makan dan kondisi fisik seseorang agar mendapatkan tingkat obesitas yang ideal. Data dari kebiasaan makan dan kondisi fisik dapat digunakan untuk memprediksi tingkatan dari obesitas seseorang. Hasil dari prediksi tingkatan obesitas dapat dijadikan sebagai acuan untuk mengatur atau memperbaiki kebiasaa makan dan kondisi fisik sebelum penyakit obesitas bertambah parah.
+
+
+## *Problem Statements*
 Adapun masalah yang bisa diangkat berdasarkan latar belakang adalah:
-* Faktor atau fitur apa yang paling mempengaruhi obesitas seseorang?
-* Bagaimana karakteristik obesitas seseorang dengan pola makan dan kondisi fisik tertentu?
+* Bagaimana memprediksi tingkat obesitas seseorang berdasarkan kebiasaan makan dan kondisi fisik seseorang?
+* Bagaimana memilih model terbaik untuk memprediksi tingkat obesitas seseorang?
 
-## Goals
-* Mengetahui faktor yang paling berpengaruh terhadap obesitas seseorang
-* Membangun sebuah model yang dapat memprediksi tingkat obesitas seseorang berdasarkan riwayat pola makan dan kondisi fisik seseorang
+## *Goals*
+* Membangun sebuah model yang dapat memprediksi tingkat obesitas seseorang berdasarkan kebiasaan makan dan kondisi fisik seseorang
+* Memilih model terbaik berdasarkan tingkat kesalahan dari MSE yang terkecil
 
-## Solution statements
-* Melakukan Exploratory Data Analysis terhadap semua faktor atau variabel untuk menemumak varibel yang paling berpengaruh terhadap penentuan tingkat obesitas seseorang
-* Membangun 3 model machine learning sederhana dan memilih yang terbaik untuk memprediksi obesitas berdasarkan riwayat pola makan dan kondisi fisik
+## *Solution statements*
+* Membangun 3 model machine learning sederhana untuk memprediksi tingkat obesitas seseorang
+* Memilih model machine learning yang terbaik berdasarkan tingkat kesalahan terkecil dari MSE
 
-## Data Understanding & Removing Outlier
-Dataset yang digunakan dalam proyek ini merupakan data pola makanan dan kondisi fisik yang memiliki kriteria tingkat obesitasnya masing-masing. Dataset ini sudah tersedia dan dapat diunduh pada [UCI Machine learning](https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition).
+## *Data Understanding & Removing Outlier*
+Dataset yang digunakan dalam proyek ini merupakan data kebiasaan makan dan kondisi fisik yang memiliki kriteria tingkat obesitasnya masing-masing. Dataset ini sudah tersedia dan dapat diunduh pada [UCI *Machine learning*](https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition).
 
 Berikut informasi pada dataset :
-* Dataset memiliki format CSV (Comma-Seperated Values).
+* Dataset memiliki format CSV (*Comma-Seperated Values*).
 * Dataset memiliki 2111 sample dengan 16 fitur.
-* Dataset memiliki 4 fitur bertipe categorical 6 fitur bertipe data continuous, 4 bertipe data binary, dan 2 tipe data integer.
-* Tidak ada missing value dalam dataset.
+* Dataset memiliki 4 fitur bertipe categorical 6 fitur bertipe data *continuous*, 4 bertipe data *binary*, dan 2 tipe data *integer*.
+* Tidak ada *missing value* dalam dataset.
 
 ## Variabel- variabel pada dataset
 * Gender : Jenis kelamin
@@ -62,55 +61,140 @@ Berikut informasi pada dataset :
 * MTRANS : Transportasi yang digunakan
 * NObeyesdad  : Label tingkat obesitas
 
-## Exploratory Data Analysis
-### Assessing Data
-Melihat informasi dataset<br> 
-![image](https://github.com/abdussalamattaqwa/dicoding-ML_terapan-submission1/assets/67810655/35cb6e80-a58b-453d-99b5-89d443a5cb4b)
-<br> Dapat dilihat fitur-fitur yang terdapat pada dataset dan tipe data yang terbaca
+## *Exploratory Data Analysis*
+### *Assessing Data*
+Melihat informasi dataset<br> Data columns (total 16 columns):
+| No |  Column                         | Non-Null Count | Dtype | 
+| --- | ------                        | -------------- | -----  |
+| 1 |  Gender                         | 2111 non-null  | object |
+| 2 |  Age                            | 2111 non-null  | float64 |
+| 3 |  Height                         | 2111 non-null  | float64 |
+| 4 |  Weight                         | 2111 non-null  | float64 |
+| 5 |  family_history_with_overweight | 2111 non-null  | object | 
+| 6 |  FAVC                           | 2111 non-null  | object |
+| 7 |  FCVC                           | 2111 non-null  | float64 |
+| 8 |  NCP                            | 2111 non-null  | float64 |
+| 9 |  CAEC                           | 2111 non-null  | object |
+| 10 |  SMOKE                          | 2111 non-null  | object |
+| 11 |  CH2O                          | 2111 non-null  | float64 |
+| 12 |  SCC                           | 2111 non-null  | object |
+| 13 |  FAF                           | 2111 non-null  | float64 |
+| 14 | TUE                            | 2111 non-null  | float64 |
+| 15 | CALC                           | 2111 non-null  | object |
+| 16 | MTRANS                         | 2111 non-null  | object|
 
-<br> Melihat jumlah nilai null pada masing-masing kolom<br> 
-![image](https://github.com/abdussalamattaqwa/dicoding-ML_terapan-submission1/assets/67810655/b8c7611c-bbbf-4790-95c6-9dcbca08719a)
-<br> Berdasarkan hasil diatas dapat dilihat bahwa tidak terdapat nilai null pada dataset<br> 
+<br> Tabel diatas menunjukkan kolom atau fitur-fitur pada dataset yang akan digunakan beserta informasi jumlah data dan tipe data masing-masing fitur.
+Dapat dilihat fitur-fitur yang terdapat pada dataset dan tipe data yang terbaca.
 
-![image](https://github.com/abdussalamattaqwa/dicoding-ML_terapan-submission1/assets/67810655/c104ff62-e1d7-4fe1-ab7f-ce051adcb83c)
-<br> Melihat deskripsi data untuk menganalisis penyebaran data masing-masing fitur dengan tipe data integeruntuk melihat apakah ada anomali data
-Berdasarkan hasil didapatkan bahwa tidak terdapat data anomali atau data tidak jelas pada dataset<br> 
+<br> Melihat jumlah nilai *null* pada masing-masing kolom. Tujuan untuk pengecekan ini adalah untuk melakukan penanganan jika terdapat nilai *null* atau data yang hilang pada dataset. Penyebab data yang hilang dapat berupa kerusakan data atau kegagalan pencatatan data. Penanganan data yang hilang sangat penting selama prapemrosesan kumpulan data karena banyak algoritma *machine learning* tidak mendukung nilai yang hilang.<br> 
+
+|Column                           | Total |
+| ----                             |---|
+|Gender                           | 0 |
+|Age                              | 0 |
+|Height                           | 0 |
+|Weight                           | 0 |
+|family_history_with_overweight   | 0 |
+|FAVC                             | 0 |
+|FCVC                             | 0 |
+|NCP                              | 0 |
+|CAEC                             | 0 |
+|SMOKE                            | 0 |
+|CH2O                             | 0 |
+|SCC                              | 0 |
+|FAF                              | 0 |
+|TUE                              | 0 |
+|CALC                             | 0 |
+|MTRANS                           | 0 |
+
+<br> Berdasarkan hasil diatas dapat dilihat bahwa tidak terdapat nilai *null* pada dataset. Sehingga tidak perlu dilakukan penanganan untuk nilai *null* atau data yang hilang.<br> 
+
+|index|Gender|Age|Height|Weight|family\_history\_with\_overweight|FAVC|FCVC|NCP|CAEC|SMOKE|CH2O|SCC|FAF|TUE|CALC|MTRANS|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|count|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|2111\.0|
+|mean|0\.5059213642823307|24\.312599908574136|1\.7016773533870204|86\.58605812648035|0\.817621980104216|0\.8839412600663192|2\.4190430615821885|2\.6856280497394596|1\.8593083846518237|0\.020843202273803884|2\.0080114040738986|0\.045476077688299386|1\.0102976958787304|0\.657865923732828|2\.2685930838465183|2\.3652297489341545|
+|std|0\.5000833972849265|6\.345968273732234|0\.09330481986792007|26\.1911717452047|0\.3862472640373802|0\.3203712366137241|0\.5339265785033002|0\.7780386488418612|0\.4685434677350143|0\.14289309147889065|0\.6129534517968722|0\.208395241212829|0\.850592430836698|0\.6089272596763782|0\.5154980665488972|1\.2614232283157334|
+|min|0\.0|14\.0|1\.45|39\.0|0\.0|0\.0|1\.0|1\.0|0\.0|0\.0|1\.0|0\.0|0\.0|0\.0|0\.0|0\.0|
+|25%|0\.0|19\.947192|1\.63|65\.473343|1\.0|1\.0|2\.0|2\.658738|2\.0|0\.0|1\.5848125|0\.0|0\.124505|0\.0|2\.0|3\.0|
+|50%|1\.0|22\.77789|1\.700499|83\.0|1\.0|1\.0|2\.385502|3\.0|2\.0|0\.0|2\.0|0\.0|1\.0|0\.62535|2\.0|3\.0|
+|75%|1\.0|26\.0|1\.768464|107\.430682|1\.0|1\.0|3\.0|3\.0|2\.0|0\.0|2\.47742|0\.0|1\.6666775|1\.0|3\.0|3\.0|
+|max|1\.0|61\.0|1\.98|173\.0|1\.0|1\.0|3\.0|4\.0|3\.0|1\.0|3\.0|1\.0|3\.0|2\.0|3\.0|4\.0|
+
+<br> Melihat deskripsi data untuk menganalisis penyebaran data masing-masing fitur dengan tipe data *integer* untuk melihat apakah ada data anomali. Berdasarkan hasil diatas didapatkan bahwa tidak terdapat data anomali atau data tidak jelas pada dataset, sehingga tidak perlu dilakukan penanganan data anomali atau menghapus outlier pada dataset.<br> 
 
 Visualisasi jenis kelamin yang dominan pada data untuk melihat ukuran data berdasarkan gender<br> 
 ![image](https://github.com/abdussalamattaqwa/dicoding-ML_terapan-submission1/assets/67810655/401e295b-f486-404b-9087-61fc09fb31cb)
-<br> Berdasarkan hasil visualisasi diatas dapat dilihat bahwa data termasuk seimbang karena data laki-laki dan perempuan memiliki ukuran yang hampir sama. Jadi data cukup baik untuk digunakan untuk model machine learning<br> 
+<br> Berdasarkan hasil visualisasi diatas dapat dilihat bahwa data termasuk seimbang karena data laki-laki dan perempuan memiliki ukuran yang hampir sama atau seimbang. Hal ini menandakan ukuran dataset yang digunakan baik digunakan untuk proses pelatihan model. Data yang tidak seimbang dapat membuat Sebagian besar algoritma *machine learning* tidak bekerja dengan baik <br> 
 
-## Data Preparation
-### Label Encoder
-Untuk mengonversi label kata menjadi angka, kita perlu menggunakan pembuat label encoding. label encoding mengacu pada proses transformasi label kata menjadi bentuk numerik. Mengkonfersi data-data objek yang bersifat kategorikal menjadi numeric bertujuan agar dengan mudah dipahami model
-### Train Test Split
-Train test split adalah teknik umum yang digunakan dalam pembelajaran mesin untuk membagi data menjadi set pelatihan dan tes. Proses ini penting dalam proses pemodelan data, karena memungkinkan kita untuk menilai kinerja model pada data yang tidak terlihat. Ini juga membantu mencegah overfitting, yang terjadi ketika model berkinerja baik pada data pelatihan tetapi gagal menggeneralisasi ke data baru.
+## *Data Preparation*
+### *Label Encoder*
+Untuk mengonversi label kata menjadi angka, kita perlu menggunakan pembuat label *encoding*. label *encoding* mengacu pada proses transformasi label kata menjadi bentuk numerik. Mengkonfersi data-data objek yang bersifat kategorikal menjadi numerik bertujuan agar dengan mudah dipahami model. Berikut keseluruhan fitur yang telah dilakukan label *encoder*, dapat dilihat bahwa semua nilai pada fitur sudah dalam bentuk angka dan bisa dimasukkan kedalam model *machine learning*.
+|index|Gender|Age|Height|Weight|family\_history\_with\_overweight|FAVC|FCVC|NCP|CAEC|SMOKE|CH2O|SCC|FAF|TUE|CALC|MTRANS|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|0|0|21\.0|1\.62|64\.0|1|0|2\.0|3\.0|2|0|2\.0|0|0\.0|1\.0|3|3|
+|1|0|21\.0|1\.52|56\.0|1|0|3\.0|3\.0|2|1|3\.0|1|3\.0|0\.0|2|3|
+|2|1|23\.0|1\.8|77\.0|1|0|2\.0|3\.0|2|0|2\.0|0|2\.0|1\.0|1|3|
+|3|1|27\.0|1\.8|87\.0|0|0|3\.0|3\.0|2|0|2\.0|0|2\.0|0\.0|1|4|
+|4|1|22\.0|1\.78|89\.8|0|0|2\.0|1\.0|2|0|2\.0|0|0\.0|0\.0|2|3|
 
-## Modelling
-Pada proyek ini menggunakan 3 model machine learning sebagai perbandingan untuk menentukan model terbaik yang akan digunakan
-* Algoritma K-Nearest Neighbor (KNN) adalah algoritma machine learning yang bersifat non-parametric dan lazy learning. Metode yang bersifat non-parametric memiliki makna bahwa metode tersebut tidak membuat asumsi apa pun tentang distribusi data yang mendasarinya. Dengan kata lain, tidak ada jumlah parameter atau estimasi parameter yang tetap dalam model, terlepas data tersebut berukuran kecil ataupun besar. Parameter yang digunakan pada algoritma ini adalah
+<br> Selain fitur yang dilakukan encoder kedalam bentuk angka, data target juga perlu dilakukan label *encoding* untuk dimasukkan kedalam model. Berikut hasil label *encoding* pada data target:
+
+|index|NObeyesdad|
+|---|---|
+|0|1|
+|1|1|
+|2|1|
+|3|5|
+|4|6|
+
+### *Train Test Split*
+*Train test split* adalah teknik umum yang digunakan dalam *machine learning* untuk membagi data menjadi set pelatihan dan tes. Proses ini penting dalam proses pemodelan data, karena memungkinkan kita untuk menilai kinerja model pada data yang tidak terlihat. Pada proyek ini memisahkan data latih dan data uji dengan pembagian 80 % data latih dan 20 % data uji. Proses pemisahan ini dilakukan untuk menghindari terjadinya overfitting, yaitu suatu kondisi pelatihan yang hasil uji terhadap data yang dilatih sangat bagus tetapi diuji oleh data lain yang tidak digunakan dalam pelatihan sangat buruk. Overfitting terjadi karena kegagalan model dalam proses generalisasi data.
+
+## *Modelling*
+Pada proyek ini karena label yang akan diprediksi berupa numerik, maka algoritma yang digunakan adalah algoritma regresi. Regresi adalah metode pada *supervised learning* yang mengembalikan target numerik untuk setiap sampel. Adapun algoritma sederhana sebagai tahapan awal yang digunakan adalah algoritma *K-Nearest Neighbor (KNN)*, *Random Forest* dan *Boosting* 
+
+* Algoritma *K-Nearest Neighbor (KNN)* adalah algoritma *machine learning* yang bersifat *non-parametric* dan *lazy learning*. Metode yang bersifat *non-parametric* memiliki makna bahwa metode tersebut tidak membuat asumsi apa pun tentang distribusi data yang mendasarinya. Dengan kata lain, tidak ada jumlah parameter atau estimasi parameter yang tetap dalam model, terlepas data tersebut berukuran kecil ataupun besar. Parameter yang digunakan pada algoritma ini adalah
 <br> `n_neighbors` = Jumlah k tetangga tedekat.
-* Algoritma Random Forest merupakan salah satu metode machine learning yang menggunakan pohon keputusan dengan pengambilan data sampel secara acak. Parameter yang digunakan pada algoritma ini adalah
-<br>  `n_estimators` = Jumlah maksimum estimator keputusan di mana boosting dihentikan.
+* Algoritma *Random Forest* merupakan salah satu metode *machine learning* yang menggunakan pohon keputusan dengan pengambilan data sampel secara acak. Parameter yang digunakan pada algoritma ini adalah
+<br>  `n_estimators` = Jumlah maksimum estimator keputusan di mana *boosting* dihentikan.
 <br>  `max_depth` = Kedalaman maksimum setiap pohon.
-<br>  `random_state` = Mengontrol seed acak yang diberikan pada setiap iterasi boosting.
-* Algoritma AdaBoost, singkatan dari Adaptive Boosting, adalah sebuah teknik Boosting yang digunakan sebagai metode ensemble dalam machine learning. Algoritma ini disebut Adaptive Boosting karena bobot diberikan ulang pada setiap instance, dengan bobot yang lebih tinggi diberikan pada instance yang salah diklasifikasikan. Parameter yang digunakan pada algoritma ini adalah
-<br> `n_estimators` = Jumlah maksimum estimator di mana boosting dihentikan.
-<br> `learning_rate` = Inisial learning rate yang digunakan untuk setiap perubahan bobot pada setiap iterasi pembelajaran.
-<br> `random_state` = Mengontrol seed acak yang diberikan pada setiap iterasi boosting.
+<br>  `random_state` = Mengontrol *seed* acak yang diberikan pada setiap iterasi *boosting*.
+* Algoritma AdaBoost, singkatan dari *Adaptive Boosting*, adalah sebuah teknik *Boosting* yang digunakan sebagai metode ensemble dalam *machine learning*. Algoritma ini disebut *Adaptive Boosting* karena bobot diberikan ulang pada setiap *instance*, dengan bobot yang lebih tinggi diberikan pada *instance* yang salah diklasifikasikan. Parameter yang digunakan pada algoritma ini adalah
+<br> `n_estimators` = Jumlah maksimum *estimator* di mana *boosting* dihentikan.
+<br> `learning_rate` = Inisialisasi *learning rate* yang digunakan untuk setiap perubahan bobot pada setiap iterasi pembelajaran.
+<br> `random_state` = Mengontrol *seed acak* yang diberikan pada setiap iterasi *boosting*.
 
-* GRID Search
-Grid search adalah suatu cara untuk menemukan parameter terbaik yang digunakan untuk modeling dalam machin learning. Menggunakan grid search dapat mambantu dalam mencari hyperparameter terbaik yang digunakan untuk modeling di suatu algoritma machine learning. Adapun hasil dari algoritdma grid search pada proyek ini sebagai berikut<br> 
-![image](https://github.com/abdussalamattaqwa/dicoding-ML_terapan-submission1/assets/67810655/a59c1bc8-2598-4328-a100-d05c1572e2d1)
+* *GRID Search*
+Menggunakan algoritma *grid search* untuk *hyperparameter tunning*, *Grid search* adalah suatu cara untuk menemukan parameter terbaik yang digunakan untuk modeling dalam *machine learning*. Adapun hasil dari hyperparameter tunning setiap model menggunakan *grid search* adalah sebagai berikut:
+|index|model|best\_score|best\_params|
+|---|---|---|---|
+|0|knn|0\.8226496475499843|\{'n\_neighbors': 5\}|
+|1|boosting|0\.6166451022207549|\{'learning\_rate': 0\.1, 'n\_estimators': 100, 'random\_state': 55\}|
+|2|random\_forest|0\.9647466948911856|\{'max\_depth': 32, 'n\_estimators': 25, 'random\_state': 55\}|
 
 
 ## Evaluation
-Mean Squared Error (MSE) digunakan sebagai metrik evaluasi pada proyek ini. MSE adalah metrik evaluasi yang umum digunakan dalam statistik dan machine learning untuk mengukur seberapa akurat sebuah model regresi dalam memprediksi nilai numerik. MSE menghitung selisih antara nilai prediksi model dan nilai sebenarnya dari data, kemudian mengkuadratkan selisih tersebut agar tidak ada selisih yang bernilai negatif. Kemudian, selisih kuadrat dijumlahkan dan diambil rata-rata dari semua sampel data.<br> 
+*Metode Mean Squared Error (MSE)* digunakan pada proyek ini untuk menentukan algoritma model *machine learning* yang terbaik. Secara umum MSE digunakan untuk mengecek estimasi berapa nilai kesalahan pada hasil prediksi. Nilai MSE yang rendah atau nilai MSE mendekati nol menunjukkan bahwa hasil prediksi sesuai dengan data aktual dan bisa dijadikan untuk perhitungan prediksi di periode mendatang. Metode MSE digunakan untuk mengevaluasi metode pengukuran dengan model regresi.<br> 
 ![image](https://github.com/abdussalamattaqwa/dicoding-ML_terapan-submission1/assets/67810655/53af2296-44b8-40f3-91a0-b1b3ce5bfd93)
 <br> Berikut hasil evaluasi pada proyek ini
-![image](https://github.com/abdussalamattaqwa/dicoding-ML_terapan-submission1/assets/67810655/a4f3561b-b1bb-42a1-bf98-ae61443bc688)
-<br> Adapun grafik perbandingan error untuk setiap model dapat dilihat sebagai berikut
+|index|train|test|
+|---|---|---|
+|KNN|0\.0006203080568720379|0\.001080094562647754|
+|RF|5\.736303317535546e-05|0\.00039486335697399525|
+|Boosting|0\.0015170262746941174|0\.0016553523001821653|
+
+<br> Visualisasi dengan box plot untuk mempermudah membandingkan masing-masing kesalahan pada model. Berdasarkan hasil visualisasi didapatkan bahwa algoritma *Random Forest* memliki kesalahan yang paling kecil dibandingkan algoritma lainnya. Adapun grafik perbandingan error untuk setiap model dapat dilihat sebagai berikut <br> <br>
 ![image](https://github.com/abdussalamattaqwa/dicoding-ML_terapan-submission1/assets/67810655/4e19ef12-ba70-41fb-956d-ef6a9b610f40)
-<br> Berdasarkan hasil diatas dapat disimpulkan bahwa model terbaik yang dapat digunakan untuk prediksi tingkat obesitas seseorang adalah menggunakan model Random Forest yang memiliki error terkecil dibandingkan model yang lainnya
+
+<br> Membuat prediksi menggunakan beberapa data test pada masing-masing model. Terlihat bahwa prediksi dengan *Random Forest (RF)* memberikan hasil yang paling mendekati dibandingkan dengan model-model lainnya
+|index|y\_true|prediksi\_KNN|prediksi\_RF|prediksi\_Boosting|
+|---|---|---|---|---|
+|0|0|0\.0|0\.0|0\.3|
+|1|3|3\.0|3\.0|3\.3|
+|2|5|4\.2|4\.9|3\.9|
+|3|2|2\.6|2\.0|4\.0|
+|4|0|0\.0|0\.0|0\.3|
+
+<br> Berdasarkan hasil diatas dapat disimpulkan bahwa model terbaik yang dapat digunakan untuk prediksi tingkat obesitas seseorang adalah menggunakan model *Random Forest* yang memiliki error terkecil dibandingkan model yang lainnya
 
 

@@ -188,15 +188,15 @@ Untuk mengonversi label kata menjadi angka, kita perlu menggunakan pembuat label
 Pada proyek ini karena label yang akan diprediksi berupa numerik, maka algoritma yang digunakan adalah algoritma regresi. Regresi adalah metode pada *supervised learning* yang mengembalikan target numerik untuk setiap sampel. Adapun algoritma sederhana sebagai tahapan awal yang digunakan adalah algoritma *K-Nearest Neighbor (KNN)*, *Random Forest* dan *Boosting* 
 
 * Algoritma *K-Nearest Neighbor (KNN)* adalah algoritma *machine learning* yang bersifat *non-parametric* dan *lazy learning*. Metode yang bersifat *non-parametric* memiliki makna bahwa metode tersebut tidak membuat asumsi apa pun tentang distribusi data yang mendasarinya. Dengan kata lain, tidak ada jumlah parameter atau estimasi parameter yang tetap dalam model, terlepas data tersebut berukuran kecil ataupun besar. Parameter yang digunakan pada algoritma ini adalah
-<br> `n_neighbors` = Jumlah k tetangga tedekat.
+<br> `n_neighbors` = Jumlah k tetangga tedekat, nilai yang ditunning pada proyek ini adalah `1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15`
 * Algoritma *Random Forest* merupakan salah satu metode *machine learning* yang menggunakan pohon keputusan dengan pengambilan data sampel secara acak. Parameter yang digunakan pada algoritma ini adalah
-<br>  `n_estimators` = Jumlah maksimum estimator keputusan di mana *boosting* dihentikan.
-<br>  `max_depth` = Kedalaman maksimum setiap pohon.
-<br>  `random_state` = Mengontrol *seed* acak yang diberikan pada setiap iterasi *boosting*.
+<br>  `n_estimators` = Jumlah maksimum estimator keputusan di mana *boosting* dihentikan, nilai yang ditunning pada proyek ini adalah `25, 50, 100`.
+<br>  `max_depth` = Kedalaman maksimum setiap pohon, nilai yang ditunning pada proyek ini adalah `8, 16, 32`.
+<br>  `random_state` = Mengontrol *seed* acak yang diberikan pada setiap iterasi *boosting*, nilai yang ditunning pada proyek ini adalah `11, 33, 55`.
 * Algoritma AdaBoost, singkatan dari *Adaptive Boosting*, adalah sebuah teknik *Boosting* yang digunakan sebagai metode ensemble dalam *machine learning*. Algoritma ini disebut *Adaptive Boosting* karena bobot diberikan ulang pada setiap *instance*, dengan bobot yang lebih tinggi diberikan pada *instance* yang salah diklasifikasikan. Parameter yang digunakan pada algoritma ini adalah
-<br> `n_estimators` = Jumlah maksimum *estimator* di mana *boosting* dihentikan.
-<br> `learning_rate` = Inisialisasi *learning rate* yang digunakan untuk setiap perubahan bobot pada setiap iterasi pembelajaran.
-<br> `random_state` = Mengontrol *seed acak* yang diberikan pada setiap iterasi *boosting*.
+<br> `n_estimators` = Jumlah maksimum *estimator* di mana *boosting* dihentikan, nilai yang ditunning pada proyek ini adalah `25, 50, 100`.
+<br> `learning_rate` = Inisialisasi *learning rate* yang digunakan untuk setiap perubahan bobot pada setiap iterasi pembelajaran, nilai yang ditunning pada proyek ini adalah `0.1, 0.01, 0.001`.
+<br> `random_state` = Mengontrol *seed acak* yang diberikan pada setiap iterasi *boosting*, nilai yang ditunning pada proyek ini adalah `11, 33, 55`.
 
 * *GRID Search*
 Menggunakan algoritma *GRID search* untuk *hyperparameter tunning*, *GRID search* adalah suatu cara untuk menemukan parameter terbaik yang digunakan untuk modeling dalam *machine learning*. Adapun hasil dari hyperparameter tunning setiap model menggunakan *GRID search* adalah pada Tabel 8 sebagai berikut:

@@ -236,7 +236,7 @@ Membuat prediksi menggunakan beberapa data test pada masing-masing model. Terlih
 |3|2|2\.6|2\.0|4\.0|
 |4|0|0\.0|0\.0|0\.3|
 
-Berdasarkan hasil diatas dapat disimpulkan bahwa tingkatan obesitas berdasarkan kebiasaan makan dan kondisi fisik dapat diprediksi dengan baik menggunakan model *machine learning*. Model terbaik yang dapat digunakan untuk prediksi tingkat obesitas seseorang adalah menggunakan model *random forest* yang memiliki *error MSE* terkecil dibandingkan model yang lainnya. Model ini dapat digunakan sebagai pembantu untuk menjaga tingkat obesitas yang normal bagi seseorang.
+Berdasarkan hasil diatas dapat disimpulkan bahwa tingkatan obesitas berdasarkan kebiasaan makan dan kondisi fisik dapat diprediksi dengan baik menggunakan model *machine learning*. Model ini dapat digunakan sebagai pembantu untuk menjaga tingkat obesitas yang normal bagi seseorang dengan memperbaiki kebiasaan makan dan kondisi fisik apabila model memprediksi bahwa orang tersebut memiliki tingkat obesitas yang tidak ideal. Model terbaik yang dapat digunakan untuk prediksi tingkat obesitas seseorang adalah menggunakan model *random forest* yang memiliki *error MSE* terkecil dibandingkan model yang lainnya. 
 
 # Referensi
 

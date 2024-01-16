@@ -209,7 +209,7 @@ Menggunakan algoritma *GRID search* untuk *hyperparameter tunning*. *Hyperparame
 
 
 ## Evaluation
-*Metode Mean Squared Error (MSE)* digunakan pada proyek ini untuk menentukan algoritma model *machine learning* yang terbaik. Secara umum MSE digunakan untuk mengecek estimasi berapa nilai kesalahan pada hasil prediksi. Nilai MSE yang rendah atau nilai MSE mendekati nol menunjukkan bahwa hasil prediksi sesuai dengan data aktual dan bisa dijadikan untuk perhitungan prediksi di periode mendatang. Metode MSE digunakan untuk mengevaluasi metode pengukuran dengan model regresi.<br> 
+*Metode Mean Squared Error (MSE)* digunakan pada proyek ini untuk menentukan algoritma model *machine learning* yang terbaik. Secara umum MSE digunakan untuk mengecek estimasi berapa nilai kesalahan pada hasil prediksi. Nilai MSE yang rendah atau nilai MSE mendekati nol menunjukkan bahwa hasil prediksi sesuai dengan data aktual dan bisa dijadikan untuk perhitungan prediksi di periode mendatang. Metode MSE biasanya digunakan untuk membandingkan kinerja model yang berbeda dalam pemodelan statistik. Saat membandingkan estimator yang berbeda menggunakan MSE, MSE yang lebih kecil lebih baik. Hal ini karena MSE yang lebih kecil menunjukkan bahwa nilai perkiraan lebih dekat dengan nilai sebenarnya, sehingga menunjukkan bahwa model tersebut lebih akurat dan dapat diandalkan. Sebaliknya, MSE yang lebih besar akan menunjukkan perbedaan yang lebih besar antara nilai estimasi dan nilai aktual, sehingga hal ini kurang diinginkan dalam estimasi statistik.<br> 
 ![image](https://github.com/abdussalamattaqwa/dicoding-ML_terapan-submission1/assets/67810655/53af2296-44b8-40f3-91a0-b1b3ce5bfd93)
 <br> Gambar 5. Rumus metode *mean squared error*
 <br> Berikut hasil evaluasi pada proyek ini dapat dilihat pada tabel 9.
@@ -220,7 +220,7 @@ Menggunakan algoritma *GRID search* untuk *hyperparameter tunning*. *Hyperparame
 |RF|5\.736303317535546e-05|0\.00039486335697399525|
 |Boosting|0\.0015170262746941174|0\.0016553523001821653|
 
-Visualisasi dengan box plot untuk mempermudah membandingkan masing-masing kesalahan pada model. Berdasarkan hasil visualisasi didapatkan bahwa algoritma *Random Forest* memliki kesalahan yang paling kecil dibandingkan algoritma lainnya. Adapun grafik perbandingan error untuk setiap model dapat dilihat sebagai berikut. <br> 
+Berdasarkan hasil diatas didapatkan bahwa random forest memiliki tingkat kesalahan terkecil dibandingkan yang lainnya. Selisih antara nilai prediksi dan nilai aktual sebesar 0,00000573 untuk data training dan 0.000394 untuk data testing terbilang rendah dan dapat dikatakan model dapat memprediksi data sangat baik karena jarak perbedaan label tingkat obesitas masing-masing adalah 1. Visualisasi dengan box plot untuk mempermudah membandingkan masing-masing kesalahan pada model. Berdasarkan hasil visualisasi didapatkan bahwa algoritma *Random Forest* memliki kesalahan yang paling kecil dibandingkan algoritma lainnya. Adapun grafik perbandingan error untuk setiap model dapat dilihat sebagai berikut. <br> 
 ![image](https://github.com/abdussalamattaqwa/dicoding-ML_terapan-submission1/assets/67810655/4e19ef12-ba70-41fb-956d-ef6a9b610f40)
 <br> Gambar 6. Grafik MSE setiap model.
 
